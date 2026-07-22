@@ -15,14 +15,19 @@ const allPosts = (await getCollection('blog')).sort(
 const articlePosts = allPosts.filter(post => post.data.category !== 'videos');
 const videoPosts = allPosts.filter(post => post.data.category === 'videos');
 
-// Paginación: 9 artículos en home
-const postsPerPage = 9;
-const currentPage = 1;
-const totalPages = Math.ceil(articlePosts.length / postsPerPage);
-const paginatedPosts = articlePosts.slice(0, postsPerPage);
+// Últimos 9 artículos para el home
+const latestArticles = articlePosts.slice(0, 9);
 
 // Últimas 3 recomendaciones (videos)
 const latestVideos = videoPosts.slice(0, 3);
+
+// Categorías activas (excluyendo videos)
+const categories = [
+	{ slug: 'domotica', label: '🏠 Domótica' },
+	{ slug: 'energia-solar', label: '☀️ Energía Solar' },
+	{ slug: 'tecnologia', label: '💻 Tecnología' },
+	{ slug: 'vida', label: '🌱 Vida' },
+];
 ---
 
 <!doctype html>
@@ -144,30 +149,51 @@ const latestVideos = videoPosts.slice(0, 3);
 				font-size: 2rem;
 			}
 			
-			/* Paginación */
-			.pagination {
-				display: flex;
-				justify-content: center;
-				gap: 0.5rem;
-				margin-top: 2rem;
+			/* Link ver más videos */
+			.see-more {
+				text-align: center;
+				margin-top: 1.5rem;
 			}
-			.pagination a,
-			.pagination span {
-				padding: 0.5rem 1rem;
-				border-radius: 4px;
-				text-decoration: none;
-				font-weight: 500;
-			}
-			.pagination a {
+			.see-more a {
+				display: inline-block;
+				padding: 0.75rem 1.5rem;
 				background: rgb(var(--accent));
 				color: white;
+				text-decoration: none;
+				border-radius: 4px;
+				font-weight: 500;
+				transition: background 0.2s ease;
 			}
-			.pagination a:hover {
+			.see-more a:hover {
 				background: rgb(var(--accent-dark));
 			}
-			.pagination .current {
-				background: rgba(var(--gray), 0.2);
+			
+			/* Sección de categorías */
+			.categories-section {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid rgba(var(--gray), 0.2);
+			}
+			.category-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+			.category-card {
+				background: rgba(var(--gray), 0.05);
+				border-radius: 12px;
+				padding: 1.5rem;
+				text-align: center;
+				transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+				text-decoration: none;
 				color: rgb(var(--black));
+				font-weight: 500;
+			}
+			.category-card:hover {
+				transform: translateY(-4px);
+				box-shadow: var(--box-shadow);
+				background: rgba(var(--accent), 0.1);
 			}
 			
 			@media (max-width: 720px) {
@@ -187,6 +213,9 @@ const latestVideos = videoPosts.slice(0, 3);
 				.video-grid {
 					grid-template-columns: 1fr;
 				}
+				.category-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
 			}
 		</style>
 	</head>
@@ -198,7 +227,7 @@ const latestVideos = videoPosts.slice(0, 3);
 				<h3 class="section-title">Últimos artículos</h3>
 				<ul>
 					{
-						paginatedPosts.map((post) => (
+						latestArticles.map((post) => (
 							<li>
 								<a href={`/${post.id}/`}>
 									{post.data.heroImage && (
@@ -216,16 +245,6 @@ const latestVideos = videoPosts.slice(0, 3);
 						))
 						}
 					</ul>
-					
-					<!-- Paginación -->
-					{totalPages > 1 && (
-						<div class="pagination">
-							<span class="current">Página {currentPage} de {totalPages}</span>
-							{currentPage < totalPages && (
-								<a href={`/page/${currentPage + 1}`}>Siguiente →</a>
-							)}
-						</div>
-					)}
 				</section>
 				
 			<!-- Sección de Videos Recomendados -->
@@ -245,8 +264,23 @@ const latestVideos = videoPosts.slice(0, 3);
 							</div>
 						))}
 					</div>
+					<div class="see-more">
+						<a href="/videos">Ver más videos →</a>
+					</div>
 				</section>
 			)}
+			
+			<!-- Sección Explorar por Tema -->
+			<section class="categories-section">
+				<h3 class="section-title">Explorar por tema</h3>
+				<div class="category-grid">
+					{categories.map((cat) => (
+						<a href={`/category/${cat.slug}`} class="category-card">
+							{cat.label}
+						</a>
+					))}
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
