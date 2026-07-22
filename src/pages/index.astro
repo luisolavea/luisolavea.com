@@ -247,6 +247,18 @@ const categories = [
 					</ul>
 				</section>
 				
+			<!-- Sección Explorar por Tema -->
+			<section class="categories-section">
+				<h3 class="section-title">Explorar por tema</h3>
+				<div class="category-grid">
+					{categories.map((cat) => (
+						<a href={`/category/${cat.slug}`} class="category-card">
+							{cat.label}
+						</a>
+					))}
+				</div>
+			</section>
+			
 			<!-- Sección de Videos Recomendados -->
 			{latestVideos.length > 0 && (
 				<section class="video-section">
@@ -269,18 +281,6 @@ const categories = [
 					</div>
 				</section>
 			)}
-			
-			<!-- Sección Explorar por Tema -->
-			<section class="categories-section">
-				<h3 class="section-title">Explorar por tema</h3>
-				<div class="category-grid">
-					{categories.map((cat) => (
-						<a href={`/category/${cat.slug}`} class="category-card">
-							{cat.label}
-						</a>
-					))}
-				</div>
-			</section>
 		</main>
 		<Footer />
 	</body>
