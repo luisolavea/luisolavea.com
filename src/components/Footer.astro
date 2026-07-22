@@ -3,14 +3,57 @@ const today = new Date();
 ---
 
 <footer>
-	<p>&copy; {today.getFullYear()} Conectando Ideas, Blog perteneciente a Nemeton Lab SpA. Todos los derechos reservados.</p>
+	<div class="footer-content">
+		<p class="copyright">&copy; {today.getFullYear()} Conectando Ideas · Luis Olave A</p>
+		<p class="tagline">Pensando, escribiendo y viviendo desde el campo 🌱☕️</p>
+		<div class="social-links">
+			<a href="https://x.com/LuisOlaveA" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+				<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"
+					><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg
+				>
+			</a>
+			<a href="https://www.facebook.com/luisolavea.blog" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+				<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"
+					><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg
+				>
+			</a>
+		</div>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 3em 1em;
+		padding: 2em 1em;
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+	}
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		align-items: center;
+	}
+	.copyright {
+		margin: 0;
 		font-size: 0.9rem;
+		font-weight: 500;
+		color: rgb(var(--black));
+	}
+	.tagline {
+		margin: 0;
+		font-size: 0.85rem;
+		font-style: italic;
+	}
+	.social-links {
+		display: flex;
+		gap: 1em;
+		margin-top: 0.75em;
+	}
+	.social-links a {
+		color: rgb(var(--gray));
+		transition: color 0.2s ease;
+	}
+	.social-links a:hover {
+		color: rgb(var(--accent));
 	}
 </style>
