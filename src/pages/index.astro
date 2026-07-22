@@ -148,6 +148,13 @@ const categories = [
 				color: white;
 				font-size: 2rem;
 			}
+			.video-thumbnail {
+				width: 100%;
+				height: 160px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 0.75rem;
+			}
 			
 			/* Link ver más videos */
 			.see-more {
@@ -267,7 +274,16 @@ const categories = [
 						{latestVideos.map((video) => (
 							<div class="video-card">
 								<a href={`/${video.id}/`}>
-									<div class="video-placeholder">▶</div>
+									{video.data.videoId ? (
+										<img 
+											src={`https://img.youtube.com/vi/${video.data.videoId}/mqdefault.jpg`} 
+											alt={video.data.title}
+											class="video-thumbnail"
+											loading="lazy"
+										/>
+									) : (
+										<div class="video-placeholder">▶</div>
+									)}
 									<h5>{video.data.title}</h5>
 									<p class="date">
 										<FormattedDate date={video.data.pubDate} />

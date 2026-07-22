@@ -3,6 +3,7 @@ title: Multa por solo uso Habitacional del predio (Chile)
 description: A considerar si se vive en una Parcela en Chile, es bueno tener una huerta, tener gallinas (aunque yo no las puedo ver) o algunos frutales.
 pubDate: '2025-05-07'
 category: videos
+videoId: dPYtB9Jcgd0
 tags:
   - campo
   - favoritos

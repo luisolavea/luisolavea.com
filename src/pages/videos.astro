@@ -79,6 +79,13 @@ const pageDescription = 'Colección de videos recomendados sobre autismo, neurod
 				font-size: 3rem;
 				margin-bottom: 1rem;
 			}
+			.video-thumbnail {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 1rem;
+			}
 			.video-card h2 {
 				margin: 0 0 0.5rem 0;
 				font-size: 1.25rem;
@@ -139,7 +146,16 @@ const pageDescription = 'Colección de videos recomendados sobre autismo, neurod
 					{videoPosts.map((video) => (
 						<li class="video-card">
 							<a href={`/${video.id}/`}>
-								<div class="video-placeholder">▶</div>
+								{video.data.videoId ? (
+									<img 
+										src={`https://img.youtube.com/vi/${video.data.videoId}/mqdefault.jpg`} 
+										alt={video.data.title}
+										class="video-thumbnail"
+										loading="lazy"
+									/>
+								) : (
+									<div class="video-placeholder">▶</div>
+								)}
 								<h2>{video.data.title}</h2>
 								<p class="date">
 									<FormattedDate date={video.data.pubDate} />

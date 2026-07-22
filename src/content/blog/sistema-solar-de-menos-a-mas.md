@@ -3,6 +3,7 @@ title: Sistema Solar de menos a más
 description: Para los que se complican en migrar a un sistema solar (aislado) hay quienes inician con poco y van creciendo su instalación con el tiempo, incorporando diferen
 pubDate: '2025-11-18'
 category: videos
+videoId: UhDEgKvvPpA
 tags:
   - diy
   - favoritos

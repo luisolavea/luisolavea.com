@@ -3,6 +3,7 @@ title: Autismo e Interocepción
 description: Este vídeo, una de las cosas que me permitío, es saber el por qué mi papá tiene «desregulada» la sensación de temperatura corporal.
 pubDate: '2025-04-16'
 category: videos
+videoId: ywOu6_548TQ
 tags:
   - autismo
   - favoritos

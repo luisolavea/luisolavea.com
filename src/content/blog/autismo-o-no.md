@@ -3,6 +3,7 @@ title: ¿Autismo o no?
 description: Hay veces, incluso yo mismo dudo de mi propio diagnostico, si lo mio realmente es Autismo (Nivel 1), lo que antes era conocido como Síndrome de Asperger, ya que
 pubDate: '2025-09-05'
 category: videos
+videoId: w0HMNPBB8fg
 tags:
   - autismo
   - favoritos

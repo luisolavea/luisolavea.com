@@ -3,6 +3,7 @@ title: La «moda» de la neurodivergencia
 description: Un excelente video sobre si neurodivergencia es una «moda» o una «epidemia» como algunos autores señalan.
 pubDate: '2025-03-26'
 category: videos
+videoId: 0b8RjZdtAiE
 tags:
   - aci
   - autismo

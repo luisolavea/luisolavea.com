@@ -3,6 +3,7 @@ title: 'Rosie King: Cómo el autismo me liberó para ser yo misma'
 description: Me gustaría compartir este video de Rosie King en TEDMED 2014, donde habla sobre el miedo a la diversidad que muchas personas “normales” tienen y lo que ha sign
 pubDate: '2025-04-23'
 category: videos
+videoId: jQ95xlZeHo8
 tags:
   - autismo
   - favoritos
