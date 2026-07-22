@@ -1,0 +1,188 @@
+---
+const SITE_TITLE = 'Conectando Ideas';
+const SITE_TAGLINE = 'Tecnología, Energía Solar y Mi Vida';
+
+const navLinks = [
+	{ href: '/', label: 'Home' },
+	{ href: '/category/domotica', label: 'Domótica' },
+	{ href: '/category/energia-solar', label: 'Energía Solar' },
+	{ href: '/category/tecnologia', label: 'Tecnología' },
+	{ href: '/category/vida', label: 'Vida' },
+	{ href: '/videos', label: 'Videos' },
+];
+---
+
+<header>
+	<nav>
+		<div class="brand">
+			<img src="/profile.png" alt="Luis Olave" class="profile-img" />
+			<div class="brand-text">
+				<h2><a href="/">{SITE_TITLE}</a></h2>
+				<p class="tagline">{SITE_TAGLINE}</p>
+			</div>
+		</div>
+		<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+			<span class="hamburger"></span>
+		</button>
+		<div class="nav-menu">
+			{navLinks.map(link => (
+				<a href={link.href} class="nav-link">{link.label}</a>
+			))}
+		</div>
+	</nav>
+</header>
+
+<script>
+	const menuToggle = document.querySelector('.menu-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	
+	menuToggle?.addEventListener('click', () => {
+		const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+		menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+		navMenu?.classList.toggle('open');
+	});
+	
+	// Cerrar menú al hacer clic en un link
+	document.querySelectorAll('.nav-link').forEach(link => {
+		link.addEventListener('click', () => {
+			menuToggle?.setAttribute('aria-expanded', 'false');
+			navMenu?.classList.remove('open');
+		});
+	});
+</script>
+
+<style>
+	header {
+		margin: 0;
+		padding: 1.5em 2em;
+		background: #1B5E20;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+	}
+	.profile-img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 3px solid rgba(255,255,255,0.3);
+	}
+	.brand-text {
+		display: flex;
+		flex-direction: column;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.6em;
+	}
+	h2 a {
+		text-decoration: none;
+		color: white;
+	}
+	.tagline {
+		margin: 0.25em 0 0 0;
+		font-size: 0.9em;
+		color: rgba(255,255,255,0.85);
+		font-style: italic;
+	}
+	
+	/* Menu toggle button - hidden on desktop */
+	.menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5em;
+		z-index: 100;
+	}
+	.hamburger {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background: white;
+		position: relative;
+		transition: all 0.3s ease;
+	}
+	.hamburger::before,
+	.hamburger::after {
+		content: '';
+		position: absolute;
+		width: 24px;
+		height: 2px;
+		background: white;
+		transition: all 0.3s ease;
+	}
+	.hamburger::before {
+		top: -7px;
+	}
+	.hamburger::after {
+		top: 7px;
+	}
+	
+	/* Transform hamburger to X when open */
+	.menu-toggle[aria-expanded="true"] .hamburger {
+		background: transparent;
+	}
+	.menu-toggle[aria-expanded="true"] .hamburger::before {
+		transform: rotate(45deg);
+		top: 0;
+	}
+	.menu-toggle[aria-expanded="true"] .hamburger::after {
+		transform: rotate(-45deg);
+		top: 0;
+	}
+	
+	/* Navigation menu */
+	.nav-menu {
+		display: flex;
+		gap: 0.25em;
+	}
+	.nav-link {
+		padding: 0.75em 1em;
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+		transition: background 0.2s ease;
+		border-radius: 4px;
+		white-space: nowrap;
+	}
+	.nav-link:hover {
+		background: rgba(255,255,255,0.1);
+	}
+	
+	/* Mobile styles */
+	@media (max-width: 720px) {
+		nav {
+			flex-wrap: wrap;
+		}
+		.menu-toggle {
+			display: block;
+		}
+		.nav-menu {
+			display: none;
+			width: 100%;
+			flex-direction: column;
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px solid rgba(255,255,255,0.2);
+		}
+		.nav-menu.open {
+			display: flex;
+		}
+		.nav-link {
+			padding: 1em 0.5em;
+			border-radius: 0;
+		}
+	}
+</style>

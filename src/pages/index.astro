@@ -1,0 +1,253 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Filtrar posts por categoría
+const articlePosts = allPosts.filter(post => post.data.category !== 'videos');
+const videoPosts = allPosts.filter(post => post.data.category === 'videos');
+
+// Paginación: 9 artículos en home
+const postsPerPage = 9;
+const currentPage = 1;
+const totalPages = Math.ceil(articlePosts.length / postsPerPage);
+const paginatedPosts = articlePosts.slice(0, postsPerPage);
+
+// Últimas 3 recomendaciones (videos)
+const latestVideos = videoPosts.slice(0, 3);
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 2em 1em;
+			}
+			.section-title {
+				font-size: 1.5rem;
+				margin: 2rem 0 1rem 0;
+				color: rgb(var(--black));
+				border-bottom: 2px solid rgb(var(--accent));
+				padding-bottom: 0.5rem;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			ul li:first-child img {
+				width: 100%;
+			}
+			ul li:first-child .title {
+				font-size: 2.369rem;
+			}
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			.category {
+				display: inline-block;
+				margin-top: 0.5rem;
+				font-size: 0.875rem;
+				color: rgb(var(--accent));
+			}
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			
+			/* Estilos para sección de videos */
+			.video-section {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid rgba(var(--gray), 0.2);
+			}
+			.video-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5rem;
+			}
+			.video-card {
+				background: rgba(var(--gray), 0.05);
+				border-radius: 12px;
+				padding: 1rem;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.video-card:hover {
+				transform: translateY(-4px);
+				box-shadow: var(--box-shadow);
+			}
+			.video-card a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.video-card h5 {
+				margin: 0.75rem 0 0.25rem 0;
+				font-size: 1rem;
+				color: rgb(var(--black));
+			}
+			.video-card .date {
+				font-size: 0.8rem;
+			}
+			.video-placeholder {
+				width: 100%;
+				height: 160px;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 2rem;
+			}
+			
+			/* Paginación */
+			.pagination {
+				display: flex;
+				justify-content: center;
+				gap: 0.5rem;
+				margin-top: 2rem;
+			}
+			.pagination a,
+			.pagination span {
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+				text-decoration: none;
+				font-weight: 500;
+			}
+			.pagination a {
+				background: rgb(var(--accent));
+				color: white;
+			}
+			.pagination a:hover {
+				background: rgb(var(--accent-dark));
+			}
+			.pagination .current {
+				background: rgba(var(--gray), 0.2);
+				color: rgb(var(--black));
+			}
+			
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
+				.video-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<!-- Sección de Artículos -->
+			<section>
+				<h3 class="section-title">Últimos artículos</h3>
+				<ul>
+					{
+						paginatedPosts.map((post) => (
+							<li>
+								<a href={`/${post.id}/`}>
+									{post.data.heroImage && (
+										<Image width={720} height={360} src={post.data.heroImage} alt="" />
+									)}
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+									{post.data.category && (
+										<span class="category">{post.data.category}</span>
+									)}
+								</a>
+							</li>
+						))
+						}
+					</ul>
+					
+					<!-- Paginación -->
+					{totalPages > 1 && (
+						<div class="pagination">
+							<span class="current">Página {currentPage} de {totalPages}</span>
+							{currentPage < totalPages && (
+								<a href={`/page/${currentPage + 1}`}>Siguiente →</a>
+							)}
+						</div>
+					)}
+				</section>
+				
+			<!-- Sección de Videos Recomendados -->
+			{latestVideos.length > 0 && (
+				<section class="video-section">
+					<h3 class="section-title">Últimas recomendaciones</h3>
+					<div class="video-grid">
+						{latestVideos.map((video) => (
+							<div class="video-card">
+								<a href={`/${video.id}/`}>
+									<div class="video-placeholder">▶</div>
+									<h5>{video.data.title}</h5>
+									<p class="date">
+										<FormattedDate date={video.data.pubDate} />
+									</p>
+								</a>
+							</div>
+						))}
+					</div>
+				</section>
+			)}
+		</main>
+		<Footer />
+	</body>
+</html>

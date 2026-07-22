@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="es" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Conectando Ideas" href="https://luisolavea.com/rss.xml"><meta name="generator" content="Astro v7.1.3"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Canonical URL --><link rel="canonical" href="https://luisolavea.com/automatizando-luces-y-sensores-con-home-assistant-ejemplos-practicos/"><!-- Primary Meta Tags --><title>Automatizando luces y sensores con Home Assistant: Ejemplos prácticos</title><meta name="description" content="Home Assistant es una potente plataforma de automatización del hogar que permite integrar luces y sensores de diferentes tecnologías como Zigbee, WiFi y Z-Wave "><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://luisolavea.com/automatizando-luces-y-sensores-con-home-assistant-ejemplos-practicos/"><meta property="og:title" content="Automatizando luces y sensores con Home Assistant: Ejemplos prácticos"><meta property="og:description" content="Home Assistant es una potente plataforma de automatización del hogar que permite integrar luces y sensores de diferentes tecnologías como Zigbee, WiFi y Z-Wave "><meta property="og:image" content="https://luisolavea.com/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Google Analytics 4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-543097320"></script><script>(function(){const GA4_ID = "G-543097320";
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', GA4_ID);
+})();</script><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/_astro/Header.D0sURLbP.css"><style>.tag-cloud[data-astro-cid-fxptydvg]{flex-wrap:wrap;gap:.5rem;margin:1rem 0;display:flex}.tag[data-astro-cid-fxptydvg]{color:rgb(var(--gray-dark));background:rgba(var(--gray-light), .5);border-radius:999px;padding:.25em .75em;font-size:.875rem;display:inline-block}main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.meta[data-astro-cid-tldeq5d5]{margin-bottom:1em}.meta[data-astro-cid-tldeq5d5] a[data-astro-cid-tldeq5d5]{color:rgb(var(--accent));text-decoration:none}.meta[data-astro-cid-tldeq5d5] a[data-astro-cid-tldeq5d5]:hover{text-decoration:underline}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><div class="brand" data-astro-cid-nen7h5rs><img src="/profile.png" alt="Luis Olave" class="profile-img" data-astro-cid-nen7h5rs><div class="brand-text" data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/" data-astro-cid-nen7h5rs>Conectando Ideas</a></h2><p class="tagline" data-astro-cid-nen7h5rs>Tecnología, Energía Solar y Mi Vida</p></div></div><button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" data-astro-cid-nen7h5rs><span class="hamburger" data-astro-cid-nen7h5rs></span></button><div class="nav-menu" data-astro-cid-nen7h5rs><a href="/" class="nav-link" data-astro-cid-nen7h5rs>Home</a><a href="/category/domotica" class="nav-link" data-astro-cid-nen7h5rs>Domótica</a><a href="/category/energia-solar" class="nav-link" data-astro-cid-nen7h5rs>Energía Solar</a><a href="/category/tecnologia" class="nav-link" data-astro-cid-nen7h5rs>Tecnología</a><a href="/category/vida" class="nav-link" data-astro-cid-nen7h5rs>Vida</a><a href="/videos" class="nav-link" data-astro-cid-nen7h5rs>Videos</a></div></nav></header><script type="module">var e=document.querySelector(`.menu-toggle`),t=document.querySelector(`.nav-menu`);e?.addEventListener(`click`,()=>{let n=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,String(!n)),t?.classList.toggle(`open`)}),document.querySelectorAll(`.nav-link`).forEach(n=>{n.addEventListener(`click`,()=>{e?.setAttribute(`aria-expanded`,`false`),t?.classList.remove(`open`)})});</script><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2025-02-19T00:00:00.000Z">Feb 18, 2025</time></div><h1 data-astro-cid-tldeq5d5>Automatizando luces y sensores con Home Assistant: Ejemplos prácticos</h1><div class="meta" data-astro-cid-tldeq5d5><a href="/category/domotica/" data-astro-cid-tldeq5d5>domotica</a></div><div class="tag-cloud" data-astro-cid-fxptydvg><span class="tag" data-astro-cid-fxptydvg>home-assistant</span><span class="tag" data-astro-cid-fxptydvg>automatizacion</span><span class="tag" data-astro-cid-fxptydvg>luces</span></div></div><p><strong>Home Assistant</strong> es una de las plataformas de automatización del hogar más potentes y flexibles, permitiendo la integración de una amplia variedad de dispositivos. Se trata de un software de código abierto que se ejecuta localmente, sin depender de la nube, lo que garantiza un mayor control sobre la privacidad y la seguridad de los datos.</p>
+<p>Esta plataforma es compatible con miles de dispositivos de diferentes marcas y protocolos como WiFi, Zigbee, Z-Wave y Bluetooth, lo que permite crear automatizaciones avanzadas para mejorar la eficiencia energética y la comodidad del hogar. Además, Home Assistant ofrece una interfaz intuitiva y la posibilidad de personalizar su funcionamiento mediante YAML o Node-RED, lo que lo hace accesible tanto para principiantes como para usuarios avanzados.</p>
+<p>En este artículo, exploraremos ejemplos prácticos para automatizar luces y sensores, optimizando el consumo energético y mejorando la comodidad en el hogar.</p>
+<h2 id="integración-de-luces-en-home-assistant"><strong>Integración de luces en Home Assistant</strong></h2>
+<p>Existen diferentes formas de integrar luces en Home Assistant, dependiendo del tipo de dispositivo que se utilice. Las opciones más comunes incluyen:</p>
+<ul>
+<li>
+<p><strong>Ampolletas inteligentes</strong>, que se conectan directamente a la red WiFi o a un hub Zigbee/Z-Wave.</p>
+</li>
+<li>
+<p><strong>Interruptores inteligentes</strong>, que permiten controlar una lámpara o circuito de luces sin necesidad de cambiar las ampolletas.</p>
+</li>
+<li>
+<p><strong>Relés inteligentes</strong>, que pueden instalarse en cajas de conexiones o dentro de luminarias para convertir cualquier lámpara en inteligente.</p>
+</li>
+</ul>
+<p>En mi caso, utilizo:</p>
+<ul>
+<li>
+<p><strong>Relés Zigbee</strong> para algunas lámparas, como la lámpara de techo del living y las luces de la escalera.</p>
+</li>
+<li>
+<p><strong>Ampolletas Zigbee</strong> de diferentes marcas, todas utilizando Tuya.</p>
+</li>
+<li>
+<p><strong>Ampolletas y downlights WiFi</strong> de Xiaomi, integrados en Home Assistant mediante la integración <strong>Xiaomi Miot Auto</strong>.</p>
+</li>
+</ul>
+<p>Una vez integradas, las luces aparecen en el dashboard de Home Assistant y pueden ser controladas manualmente o mediante automatizaciones.</p>
+<h2 id="sensores-en-home-assistant-movimiento-y-magnéticos"><strong>Sensores en Home Assistant: Movimiento y magnéticos</strong></h2>
+<p>Además de las luces, los sensores juegan un papel clave en la automatización del hogar. Entre los más utilizados están los sensores de movimiento y los sensores magnéticos, que permiten activar dispositivos en función de la detección de presencia o el estado de puertas y ventanas.</p>
+<h3 id="sensores-de-movimiento"><strong>Sensores de movimiento</strong></h3>
+<p>Los sensores de movimiento permiten encender luces, activar alarmas o notificaciones cuando detectan presencia. Existen diferentes tipos según su tecnología:</p>
+<ul>
+<li>
+<p><strong>WiFi</strong>: Fáciles de configurar pero con mayor consumo de energía y dependencia de la red.</p>
+</li>
+<li>
+<p><strong>Zigbee</strong>: Bajo consumo energético y respuesta rápida, ideal para integraciones locales sin depender de la nube.</p>
+</li>
+<li>
+<p><strong>Z-Wave</strong>: Similar a Zigbee, pero con un protocolo diferente y frecuencias variables según la región.</p>
+</li>
+<li>
+<p><strong>Bluetooth</strong>: Generalmente usados en dispositivos portátiles o soluciones de corto alcance.</p>
+</li>
+</ul>
+<p>En mi caso, utilizo exclusivamente <strong>sensores de movimiento Zigbee</strong>, todos gestionados a través de <strong>Zigbee2MQTT</strong>, lo que me permite integrarlos fácilmente en Home Assistant sin necesidad de depender de plataformas de terceros.</p>
+<h3 id="sensores-magnéticos"><strong>Sensores magnéticos</strong></h3>
+<p>Los sensores magnéticos detectan la apertura o cierre de puertas y ventanas, lo que permite automatizar diferentes acciones. Son muy útiles para la iluminación, por ejemplo:</p>
+<ul>
+<li>
+<p><strong>Encender las luces del pasillo exterior al abrir la puerta principal por la noche.</strong></p>
+</li>
+<li>
+<p><strong>Activar luces en un armario o despensa al abrir la puerta.</strong></p>
+</li>
+<li>
+<p><strong>Apagar la calefacción o el aire acondicionado si se abre una ventana.</strong></p>
+</li>
+</ul>
+<p>Al igual que los sensores de movimiento, los sensores magnéticos pueden ser de diferentes tecnologías (WiFi, Zigbee, Z-Wave, etc.). En mi instalación, utilizo sensores Zigbee, que integran rápidamente con mi sistema mediante Zigbee2MQTT.</p>
+<h2 id="automatizaciones-de-luces-en-home-assistant"><strong>Automatizaciones de luces en Home Assistant</strong></h2>
+<h3 id="encender-luces-con-sensor-de-movimiento"><strong>Encender luces con sensor de movimiento</strong></h3>
+<p>Una de las automatizaciones más comunes es encender las luces cuando se detecta movimiento y apagarlas tras un tiempo sin detección.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces por movimiento</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.sensor_movimiento</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>condition: []</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.luz_hall</span></span>
+<span class="line"><span>  - delay: "00:02:00"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.luz_hall</span></span>
+<span class="line"><span>mode: restart</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces por movimiento</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.sensor_movimiento</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>condition: []</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.luz_hall</span></span>
+<span class="line"><span>  - delay: "00:02:00"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.luz_hall</span></span>
+<span class="line"><span>mode: restart</span></span></code></pre>
+<p><strong>Explicación:</strong></p>
+<ul>
+<li>
+<p>Se activa cuando el sensor de movimiento detecta presencia.</p>
+</li>
+<li>
+<p>Enciende la luz del hall.</p>
+</li>
+<li>
+<p>Se apaga la luz tras 2 minutos sin detección.</p>
+</li>
+<li>
+<p><code>mode: restart</code> asegura que si hay movimiento repetido, el temporizador se reinicie.</p>
+</li>
+</ul>
+<h3 id="encender-luces-del-pasillo-con-movimiento"><strong>Encender luces del pasillo con movimiento</strong></h3>
+<p>Otra automatización útil es encender las luces del pasillo solo cuando el sol está bajo y se detecta movimiento:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender Luces del pasillo</span></span>
+<span class="line"><span>triggers:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.ocupacion_pasillo</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>conditions:</span></span>
+<span class="line"><span>  - condition: numeric_state</span></span>
+<span class="line"><span>    entity_id: sun.sun</span></span>
+<span class="line"><span>    attribute: elevation</span></span>
+<span class="line"><span>    below: 5</span></span>
+<span class="line"><span>actions:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo</span></span>
+<span class="line"><span>  - wait_for_trigger:</span></span>
+<span class="line"><span>      - platform: state</span></span>
+<span class="line"><span>        entity_id: binary_sensor.ocupacion_pasillo</span></span>
+<span class="line"><span>        to: "off"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo</span></span>
+<span class="line"><span>mode: restart</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender Luces del pasillo</span></span>
+<span class="line"><span>triggers:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.ocupacion_pasillo</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>conditions:</span></span>
+<span class="line"><span>  - condition: numeric_state</span></span>
+<span class="line"><span>    entity_id: sun.sun</span></span>
+<span class="line"><span>    attribute: elevation</span></span>
+<span class="line"><span>    below: 5</span></span>
+<span class="line"><span>actions:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo</span></span>
+<span class="line"><span>  - wait_for_trigger:</span></span>
+<span class="line"><span>      - platform: state</span></span>
+<span class="line"><span>        entity_id: binary_sensor.ocupacion_pasillo</span></span>
+<span class="line"><span>        to: "off"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo</span></span>
+<span class="line"><span>mode: restart</span></span></code></pre>
+<p><strong>Explicación:</strong></p>
+<ul>
+<li>
+<p>Se activan las luces del pasillo cuando hay movimiento y el sol está bajo.</p>
+</li>
+<li>
+<p>Las luces se mantienen encendidas mientras haya movimiento.</p>
+</li>
+<li>
+<p>Se apagan cuando ya no se detecta movimiento.</p>
+</li>
+</ul>
+<h3 id="encender-luces-con-sensor-magnético"><strong>Encender luces con sensor magnético</strong></h3>
+<p>Si se abre la puerta principal, se encienden las luces exteriores si es de noche:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces del pasillo exterior</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.puerta_principal</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>condition:</span></span>
+<span class="line"><span>  - condition: sun</span></span>
+<span class="line"><span>    after: sunset</span></span>
+<span class="line"><span>    before: sunrise</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo_exterior</span></span>
+<span class="line"><span>  - delay: "00:05:00"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo_exterior</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces del pasillo exterior</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: state</span></span>
+<span class="line"><span>    entity_id: binary_sensor.puerta_principal</span></span>
+<span class="line"><span>    to: "on"</span></span>
+<span class="line"><span>condition:</span></span>
+<span class="line"><span>  - condition: sun</span></span>
+<span class="line"><span>    after: sunset</span></span>
+<span class="line"><span>    before: sunrise</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo_exterior</span></span>
+<span class="line"><span>  - delay: "00:05:00"</span></span>
+<span class="line"><span>  - service: light.turn_off</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.pasillo_exterior</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<p><strong>Explicación:</strong></p>
+<ul>
+<li>
+<p>La automatización se activa cuando el sensor magnético de la puerta principal detecta que está abierta.</p>
+</li>
+<li>
+<p>Antes de encender la luz, verifica si es de noche.</p>
+</li>
+<li>
+<p>Si la condición se cumple, enciende la luz del pasillo exterior.</p>
+</li>
+<li>
+<p>Luego, espera 5 minutos y apaga la luz automáticamente.</p>
+</li>
+</ul>
+<h3 id="encendido-basado-en-horario"><strong>Encendido basado en horario</strong></h3>
+<p>Si se desea encender luces automáticamente al atardecer:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces al atardecer</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: sun</span></span>
+<span class="line"><span>    event: sunset</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.salon</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Encender luces al atardecer</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: sun</span></span>
+<span class="line"><span>    event: sunset</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.turn_on</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.salon</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<p><strong>Explicación:</strong></p>
+<ul>
+<li>
+<p>La automatización se activa cuando el sol se pone (<code>event: sunset</code>).</p>
+</li>
+<li>
+<p>Enciende automáticamente la luz del salón al atardecer.</p>
+</li>
+<li>
+<p>No tiene condición, por lo que siempre se ejecutará a esa hora.</p>
+</li>
+</ul>
+<h3 id="simulación-de-presencia"><strong>Simulación de presencia</strong></h3>
+<p>Para encender y apagar luces aleatoriamente cuando no hay nadie en casa:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Simulación de presencia</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: time_pattern</span></span>
+<span class="line"><span>    minutes: "/15"</span></span>
+<span class="line"><span>condition:</span></span>
+<span class="line"><span>  - condition: state</span></span>
+<span class="line"><span>    entity_id: group.familia</span></span>
+<span class="line"><span>    state: "not_home"</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.toggle</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.salon</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>alias: Simulación de presencia</span></span>
+<span class="line"><span>trigger:</span></span>
+<span class="line"><span>  - platform: time_pattern</span></span>
+<span class="line"><span>    minutes: "/15"</span></span>
+<span class="line"><span>condition:</span></span>
+<span class="line"><span>  - condition: state</span></span>
+<span class="line"><span>    entity_id: group.familia</span></span>
+<span class="line"><span>    state: "not_home"</span></span>
+<span class="line"><span>action:</span></span>
+<span class="line"><span>  - service: light.toggle</span></span>
+<span class="line"><span>    target:</span></span>
+<span class="line"><span>      entity_id: light.salon</span></span>
+<span class="line"><span>mode: single</span></span></code></pre>
+<p><strong>Explicación:</strong></p>
+<ul>
+<li>
+<p>Se ejecuta cada 15 minutos (minutes: “/15”) para hacer cambios en la iluminación.</p>
+</li>
+<li>
+<p>Primero verifica que nadie está en casa (<code>group.familia</code> debe estar en “not_home”).</p>
+</li>
+<li>
+<p>Si la condición se cumple, alterna (<code>toggle</code>) el estado de la luz del salón, encendiéndola o apagándola de manera intermitente.</p>
+</li>
+<li>
+<p>Esto simula la presencia de personas en casa, ayudando a disuadir intrusos.</p>
+</li>
+</ul>
+<h2 id="conclusión"><strong>Conclusión</strong></h2>
+<p>Home Assistant permite una personalización avanzada en la automatización de luces y sensores. Desde encender luces con movimiento hasta ajustar la iluminación según la hora del día o simular presencia, las posibilidades son infinitas.</p>
+<p>Si prefieres una alternativa más visual, Home Assistant también permite crear automatizaciones desde su dashboard sin necesidad de escribir código. Este método será abordado en otro artículo o tutorial. Además, las mismas automatizaciones pueden realizarse con <strong>Node-Red</strong>, proporcionando aún más flexibilidad en la integración de dispositivos.</p>
+<p>Si tienes dudas o sugerencias, ¡déjalas en los comentarios!</p>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Your name here. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Follow Astro on Mastodon</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/mastodon" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-jo6i4kqk></path></svg></a><a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Follow Astro on Twitter</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-jo6i4kqk></path></svg></a><a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Go to Astro's GitHub repo</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>
