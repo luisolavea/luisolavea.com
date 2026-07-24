@@ -1,7 +1,7 @@
 ---
-title: Ventajas y desventajas de tener un hogar inteligente
-description: 'En mi hogar, uso automatizaciones para hacer la vida más cómoda y eficiente, desde el control de luces y el ahorro de energía hasta notificaciones útiles sobre '
-pubDate: '2025-03-25'
+title: Ejemplos prácticos de automatizaciones útiles en mi hogar inteligente
+description: "En mi hogar, uso automatizaciones para hacer la vida más cómoda y eficiente, desde el control de luces y el ahorro de energía hasta notificaciones útiles sobre "
+pubDate: 2025-03-25
 category: domotica
 tags:
   - home-assistant

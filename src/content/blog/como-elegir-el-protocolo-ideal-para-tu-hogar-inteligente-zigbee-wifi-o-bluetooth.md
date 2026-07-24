@@ -1,7 +1,7 @@
 ---
-title: Ventajas y desventajas de tener un hogar inteligente
-description: 'Descubre cuál es el protocolo perfecto para tu hogar inteligente: Zigbee, WiFi o Bluetooth, y cómo elegir el que mejor se adapte a tus necesidades y te permita '
-pubDate: '2025-03-11'
+title: "Cómo elegir el protocolo ideal para tu hogar inteligente: Zigbee, WiFi o Bluetooth"
+description: "Descubre cuál es el protocolo perfecto para tu hogar inteligente: Zigbee, WiFi o Bluetooth, y cómo elegir el que mejor se adapte a tus necesidades y te permita "
+pubDate: 2025-03-11
 category: domotica
 tags:
   - home-assistant
