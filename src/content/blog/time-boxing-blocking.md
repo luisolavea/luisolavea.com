@@ -1,6 +1,7 @@
 ---
 title: 'Time Boxing y Time Blocking: la clave para organizar tu vida diaria'
 description: ¿Te cuesta llegar a todo lo que tienes que hacer en el día? En este artículo te explico de forma clara y sencilla qué son el Time Boxing y el Time Blocking, dos
+heroImage: ../../assets/posts/time-boxing-blocking-hero.jpg
 pubDate: '2025-05-01'
 category: vida
 tags:
