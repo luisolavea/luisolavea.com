@@ -3,7 +3,7 @@ title: Cómo integrar dispositivos de diferentes marcas en un sistema domótico 
 description: Aprende cómo unificar dispositivos de distintas marcas en un solo sistema domótico con Home Assistant como centro. ¡Descubre cómo lograrlo en el artículo comple
 pubDate: '2025-05-13'
 category: domotica
-heroImage: /images/blog/integrar-dispositivos.jpg
+heroImage: ../../assets/posts/integrar-dispositivos-hero.jpg
 tags:
   - home-assistant
   - compatibilidad
