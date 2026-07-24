@@ -1,6 +1,7 @@
 ---
 title: ¿Qué es Home Assistant y cómo cambiará tu forma de automatizar el hogar?
 description: Home Assistant te permite controlar todos tus dispositivos inteligentes desde una sola plataforma. En este artículo, cuento mi experiencia integrando dispositiv
+heroImage: ../../assets/posts/que-es-home-assistant-hero.jpg
 pubDate: '2025-04-01'
 category: domotica
 tags:
