@@ -3,6 +3,7 @@ title: Adaptar la vida en el campo para una persona neurodivergente.
 description: ¿Cómo es vivir en el campo siendo neurodivergente? Este artículo explora los desafíos únicos y las soluciones prácticas para transformar la vida rural en una ex
 pubDate: '2025-05-08'
 category: vida
+heroImage: ../../assets/posts/adaptar-la-vida-en-el-campo-hero.jpg
 tags:
   - campo
   - neurodiversidad
