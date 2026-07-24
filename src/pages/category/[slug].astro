@@ -7,6 +7,15 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
+// Descripciones por categoría
+const categoryDescriptions: Record<string, string> = {
+	vida: 'Reflexiones, experiencias y aprendizajes sobre la vida cotidiana, productividad y bienestar personal.',
+	videos: 'Colección de videos recomendados sobre autismo, neurodivergencia y más.',
+	domotica: 'Guías, tutoriales y experiencias con Home Assistant, dispositivos inteligentes y automatización del hogar.',
+	'energia-solar': 'Todo sobre energía solar fotovoltaica: instalación, monitoreo, inversores y optimización del consumo.',
+	tecnologia: 'Artículos sobre tecnología, desarrollo web, herramientas y tendencias del mundo digital.',
+};
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	const categories = [...new Set(posts.map((post) => post.data.category))];
@@ -20,18 +29,48 @@ const { category } = Astro.props;
 const posts = (await getCollection('blog'))
 	.filter((post) => post.data.category === category)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const description = categoryDescriptions[category] || SITE_DESCRIPTION;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
-		<BaseHead title={`${category} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${category} | ${SITE_TITLE}`} description={description} />
 		<style>
 			main {
 				width: 960px;
 				max-width: calc(100% - 2em);
 				margin: 0 auto;
 				padding: 2em 1em;
+			}
+			.page-header {
+				text-align: center;
+				margin-bottom: 2rem;
+				padding-bottom: 1.5rem;
+				border-bottom: 2px solid rgb(var(--accent));
+			}
+			.page-header h1 {
+				margin: 0;
+				font-size: 2rem;
+				color: rgb(var(--black));
+				text-transform: capitalize;
+			}
+			.page-header p {
+				margin: 0.75rem 0 0 0;
+				color: rgb(var(--gray));
+				font-size: 1.1rem;
+				line-height: 1.5;
+			}
+			.post-count {
+				display: inline-block;
+				margin-top: 0.5rem;
+				padding: 0.25rem 0.75rem;
+				background: rgba(var(--accent), 0.1);
+				color: rgb(var(--accent));
+				border-radius: 999px;
+				font-size: 0.875rem;
+				font-weight: 500;
 			}
 			ul {
 				display: flex;
@@ -76,13 +115,20 @@ const posts = (await getCollection('blog'))
 					width: 100%;
 					text-align: center;
 				}
+				.page-header h1 {
+					font-size: 1.5rem;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>{category}</h1>
+			<div class="page-header">
+				<h1>{category}</h1>
+				<p>{description}</p>
+				<span class="post-count">{posts.length} {posts.length === 1 ? 'artículo' : 'artículos'}</span>
+			</div>
 			<section>
 				<ul>
 					{
