@@ -3,6 +3,7 @@ title: Generación y almacenamiento de energía solar en una casa autosuficiente
 description: Descubre cómo lograr una casa autosuficiente con energía solar, desde la elección de paneles e inversores hasta el almacenamiento y optimización del consumo. Le
 pubDate: '2025-04-17'
 category: energia-solar
+heroImage: ../../assets/posts/generacion-almacenamiento-energia-hero.jpg
 tags:
   - solar
   - baterias
