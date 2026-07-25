@@ -3,6 +3,7 @@ title: 'Vivir con Energía Solar: Mitos, Realidades y Aprendizajes'
 description: 'En este artículo desmiento mitos comunes sobre la energía solar, como que solo funciona en días soleados o que nunca se amortiza. Además, abordo las realidades '
 pubDate: '2025-02-28'
 category: energia-solar
+heroImage: ../../assets/posts/vivir-energia-solar-hero.jpg
 tags:
   - solar
   - experiencia
