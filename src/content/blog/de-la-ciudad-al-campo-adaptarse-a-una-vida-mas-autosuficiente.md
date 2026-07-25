@@ -3,6 +3,7 @@ title: 'De la ciudad al campo: Adaptarse a una vida más autosuficiente'
 description: Mudarse de la ciudad al campo es una experiencia transformadora que implica desafíos, pero también grandes recompensas. En mi caso, la decisión surgió tras un b
 pubDate: '2025-02-15'
 category: vida
+heroImage: ../../assets/posts/de-la-ciudad-al-campo-hero.jpg
 tags:
   - cambio-de-vida
   - rural
