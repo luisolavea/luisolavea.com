@@ -3,6 +3,7 @@ title: 'Cómo maximizar el rendimiento de tu sistema solar: Consejos prácticos 
 description: Descubre cómo optimizar tu sistema solar con consejos prácticos sobre ubicación, mantenimiento, almacenamiento en baterías y gestión inteligente del consumo. Le
 pubDate: '2025-04-22'
 category: energia-solar
+heroImage: ../../assets/posts/maximizar-rendimiento-sistema-solar-hero.jpg
 tags:
   - solar
   - optimizacion
