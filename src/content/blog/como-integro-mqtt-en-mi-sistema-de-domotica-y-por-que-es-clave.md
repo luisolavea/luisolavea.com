@@ -1,6 +1,7 @@
 ---
 title: Cómo integro MQTT en mi sistema de domótica y por qué es clave
 description: MQTT es clave para una domótica eficiente, permitiendo una comunicación rápida y escalable entre dispositivos. En este artículo, te cuento cómo lo uso en mi sis
+heroImage: ../../assets/posts/mqtt-domotica-hero.jpg
 pubDate: '2025-03-18'
 category: domotica
 tags:
