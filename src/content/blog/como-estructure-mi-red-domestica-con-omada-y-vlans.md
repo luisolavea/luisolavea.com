@@ -3,6 +3,7 @@ title: Cómo estructuré mi red doméstica con Omada y VLANs
 description: Desde que implementé Omada en mi red doméstica, he logrado mejorar significativamente la organización, seguridad y rendimiento de mis dispositivos conectados. A
 pubDate: '2025-02-11'
 category: tecnologia
+heroImage: ../../assets/posts/omada-vlans-hero.jpg
 tags:
   - red
   - omada
