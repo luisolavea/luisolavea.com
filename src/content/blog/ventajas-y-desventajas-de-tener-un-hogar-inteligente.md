@@ -1,6 +1,7 @@
 ---
 title: Ventajas y desventajas de tener un hogar inteligente
 description: Un hogar inteligente mejora la comodidad, seguridad y eficiencia, pero tiene desafíos como costos y compatibilidad. Soluciones como Home Assistant y dispositivo
+heroImage: ../../assets/posts/ventajas-desventajas-hogar-inteligente-hero.jpg
 pubDate: '2025-04-24'
 category: domotica
 tags:
