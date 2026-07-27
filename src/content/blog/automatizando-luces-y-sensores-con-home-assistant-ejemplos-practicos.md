@@ -7,6 +7,7 @@ tags:
   - home-assistant
   - automatizacion
   - luces
+heroImage: ../../assets/posts/automatizando-luces-y-sensores-con-home-assistant-ejemplos-practicos.jpg
 ---
 
 **Home Assistant** es una de las plataformas de automatización del hogar más potentes y flexibles, permitiendo la integración de una amplia variedad de dispositivos. Se trata de un software de código abierto que se ejecuta localmente, sin depender de la nube, lo que garantiza un mayor control sobre la privacidad y la seguridad de los datos.
