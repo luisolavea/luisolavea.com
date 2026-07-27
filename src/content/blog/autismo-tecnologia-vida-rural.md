@@ -1,9 +1,9 @@
 ---
 title: Cómo el autismo influye en mi perspectiva sobre la tecnología y la vida rural
 description: Descubre cómo el autismo influye en mi forma de vivir en el campo y aprovechar la tecnología para estructurar mi día, optimizar recursos y mantenerme conectado.
-pubDate: '2025-04-10'
+pubDate: 2025-04-10
 category: vida
-heroImage: /assets/posts/autismo-tecnologia-vida-rural.jpg
+heroImage: ../../assets/posts/autismo-tecnologia-vida-rural.jpg
 tags:
   - autismo
   - campo
