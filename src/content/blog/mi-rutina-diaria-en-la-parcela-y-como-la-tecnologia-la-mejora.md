@@ -3,6 +3,7 @@ title: Mi rutina diaria en la parcela y cómo la tecnología la mejora
 description: Mi rutina en la parcela equilibra la tranquilidad del campo con la eficiencia de la tecnología. Automatizaciones y monitoreo remoto optimizan mi trabajo, el cui
 pubDate: '2025-03-06'
 category: vida
+heroImage: ../../assets/posts/mi-rutina-diaria-en-la-parcela-y-como-la-tecnologia-la-mejora.jpg
 tags:
   - rutina
   - sueño-polifasico
