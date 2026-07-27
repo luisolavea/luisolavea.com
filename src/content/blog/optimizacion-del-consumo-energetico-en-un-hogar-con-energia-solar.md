@@ -9,6 +9,7 @@ tags:
   - solar-assistant
   - tapo
   - tp-link
+heroImage: ../../assets/posts/optimizacion-del-consumo-energetico-en-un-hogar-con-energia-solar.jpg
 ---
 
 La eficiencia energética es fundamental para aprovechar al máximo una instalación de energía solar. Existen diferentes tipos de instalaciones: con y sin baterías, así como sistemas aislados o conectados a la red eléctrica. Optimizar el consumo no solo prolonga la vida de las baterías en sistemas con almacenamiento y reduce la dependencia de la red eléctrica, sino que también mejora el retorno de la inversión en el sistema solar y permite un mayor grado de autosuficiencia.
