@@ -3,6 +3,7 @@ title: Cómo la estructura y la automatización ayudan con el Asperger
 description: 'Vivir como persona autista puede hacer que el mundo se sienta caótico, pero la estructura y la automatización ayudan a reducir la ansiedad y mejorar la calidad '
 pubDate: '2025-02-21'
 category: vida
+heroImage: ../../assets/posts/como-la-estructura-y-la-automatizacion-ayudan-con-el-asperger.jpg
 tags:
   - autismo
 ---
