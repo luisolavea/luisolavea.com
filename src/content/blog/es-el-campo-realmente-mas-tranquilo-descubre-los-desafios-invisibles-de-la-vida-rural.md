@@ -11,6 +11,7 @@ tags:
   - desafios-2
   - reflexiones
   - starlink
+heroImage: ../../assets/posts/es-el-campo-realmente-mas-tranquilo.jpg
 ---
 
 Cuando me mudé al campo, tenía la típica imagen de la vida rural: serenidad, aire limpio y un ambiente donde reina la paz. En muchos aspectos esto es cierto, pero la realidad es que la tranquilidad aquí tiene matices y desafíos que no siempre imaginaba desde la ciudad. Esta experiencia me ha enseñado que la vida rural es tan compleja como la urbana, solo que con retos muy distintos, y algunas veces incluso más demandantes.
