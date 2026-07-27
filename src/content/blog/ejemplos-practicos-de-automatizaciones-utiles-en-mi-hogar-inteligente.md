@@ -7,6 +7,7 @@ tags:
   - home-assistant
   - domotica
   - smart-home
+heroImage: ../../assets/posts/ejemplos-practicos-de-automatizaciones-utiles-en-mi-hogar-inteligente.jpg
 ---
 
 La automatización del hogar ha dejado de ser un concepto futurista para convertirse en una realidad accesible para muchas personas. Gracias al avance de la tecnología y la popularización de dispositivos inteligentes, ahora es posible controlar diversos aspectos de una vivienda con facilidad. Sin embargo, aunque un hogar inteligente puede mejorar la calidad de vida, también presenta desafíos que deben considerarse antes de su implementación. En este artículo, exploraremos en detalle las ventajas y desventajas de transformar tu casa en un hogar inteligente, así como algunos consejos para maximizar sus beneficios y minimizar sus inconvenientes.
