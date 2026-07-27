@@ -3,6 +3,7 @@ title: 'Homelab en casa: Mi configuración actual y consejos para empezar'
 description: 'Un homelab permite gestionar servidores y redes en casa para aprendizaje y control de servicios. Comparto mi configuración con Proxmox, Omada, Home Assistant y '
 pubDate: '2025-03-04'
 category: tecnologia
+heroImage: ../../assets/posts/homelab-en-casa-mi-configuracion-actual-y-consejos-para-empezar.jpg
 tags:
   - homelab
   - hp
