@@ -52,15 +52,15 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="og:image" content={new URL(image.src, Astro.url)} />
 
 <!-- Google Analytics 4 -->
-<script is:inline define:vars={{ GA4_ID }}>
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+<script is:inline>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() {
 		dataLayer.push(arguments);
 	}
 	gtag('js', new Date());
-	gtag('config', GA4_ID);
+	gtag('config', 'G-543097320');
 </script>
-<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
