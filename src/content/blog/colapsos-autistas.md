@@ -1,9 +1,9 @@
 ---
 title: Colapsos Autistas – Meltdown, Shutdown y Burnout
 description: Descubre las diferencias entre meltdown, shutdown y burnout, tres tipos de colapsos autistas que van más allá de un simple berrinche. En este artículo, comparto
-pubDate: '2025-04-15'
+pubDate: 2025-04-15
 category: vida
-heroImage: /assets/posts/colapsos-autistas.jpg
+heroImage: ../../assets/posts/colapsos-autistas.jpg
 tags:
   - autismo
   - asperger
