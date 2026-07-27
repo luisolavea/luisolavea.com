@@ -21,14 +21,30 @@ pnpm preview  # previsualizar build
 ## Estructura de contenido
 
 - `src/content/blog/`: posts en Markdown/MDX.
-- Frontmatter soportado:
-  - `title`
-  - `description`
-  - `pubDate`
-  - `updatedDate` (opcional)
-  - `heroImage` (opcional)
-  - `category` (default: `general`)
-  - `tags` (default: `[]`)
+- `src/assets/posts/`: imágenes heroImage de los posts.
+
+### Frontmatter soportado
+
+| Campo | Requerido | Descripción |
+|-------|-----------|-------------|
+| `title` | Sí | Título del post |
+| `description` | Sí | Descripción para SEO/previews |
+| `pubDate` | Sí | Fecha de publicación (ISO 8601) |
+| `updatedDate` | No | Fecha de actualización |
+| `heroImage` | Sí* | Ruta relativa a la imagen destacada (ver nota abajo) |
+| `category` | No | Categoría (`vida`, `tecnologia`, `videos`, `general`) |
+| `tags` | No | Array de etiquetas |
+
+> **Nota sobre `heroImage`:**
+> - Posts de **blog** (`category: vida`, `tecnologia`, etc.): requieren `heroImage` con ruta relativa: `../../assets/posts/{slug}.jpg`
+> - Posts de **videos** (`category: videos`): **NO llevan `heroImage`**. El thumbnail se obtiene automáticamente desde YouTube.
+
+### Convenciones de imagen
+
+- Formato: JPG (recomendado para fotos)
+- Ubicación: `src/assets/posts/{slug-del-post}.jpg`
+- Tamaño recomendado: 1200x630px (ratio 1.91:1 para Open Graph)
+- Ruta en frontmatter: `../../assets/posts/{slug}.jpg` (ruta relativa desde `src/content/blog/`)
 
 ## Nota técnica
 
