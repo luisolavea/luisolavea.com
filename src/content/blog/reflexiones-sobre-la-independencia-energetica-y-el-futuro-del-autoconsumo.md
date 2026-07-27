@@ -3,6 +3,7 @@ title: Reflexiones sobre la independencia energética y el futuro del autoconsum
 description: La independencia energética ya no es solo un ideal, sino una posibilidad real gracias a los avances en energías renovables, almacenamiento y gestión inteligente
 pubDate: '2025-03-20'
 category: vida
+heroImage: ../../assets/posts/reflexiones-sobre-la-independencia-energetica-y-el-futuro-del-autoconsumo.jpg
 tags:
   - solar
   - off-grid
