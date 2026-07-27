@@ -3,6 +3,7 @@ title: Volviendo al mundo del Blogging
 description: Desde hace mucho que publico contenido en la web, si mal no recuerdo, mis primeros «blogs» datan del año 1996, cuando aún estudiaba Medicina. En aquellos tiempo
 pubDate: '2025-02-05'
 category: vida
+heroImage: ../../assets/posts/volviendo-al-mundo-del-blogging.jpg
 tags:
   - reflexiones
   - blogging
