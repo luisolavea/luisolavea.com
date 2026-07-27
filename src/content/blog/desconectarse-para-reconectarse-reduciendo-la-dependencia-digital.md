@@ -3,6 +3,7 @@ title: 'Desconectarse para reconectarse: Reduciendo la dependencia digital'
 description: El exceso de tecnología puede afectar nuestra salud mental, relaciones y productividad. Encontrar un equilibrio es clave para aprovechar sus beneficios sin caer
 pubDate: '2025-03-13'
 category: vida
+heroImage: ../../assets/posts/desconectarse-para-reconectarse-reduciendo-la-dependencia-digital.jpg
 tags:
   - bienestar
   - digital
