@@ -17,6 +17,7 @@ const blog = defineCollection({
 			category: z.string().default('general'),
 			tags: z.array(z.string()).default([]),
 			videoId: z.string().optional(),
+			draft: z.boolean().optional(),
 		}),
 });
 

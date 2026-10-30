@@ -17,7 +17,9 @@ const categoryDescriptions: Record<string, string> = {
 };
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = (await getCollection('blog')).filter(
+		(post) => import.meta.env.DEV || !post.data.draft,
+	);
 	const categories = [...new Set(posts.map((post) => post.data.category))];
 	return categories.map((category) => ({
 		params: { slug: category.toLowerCase().replace(/\s+/g, '-') },
@@ -27,7 +29,11 @@ export async function getStaticPaths() {
 
 const { category } = Astro.props;
 const posts = (await getCollection('blog'))
-	.filter((post) => post.data.category === category)
+	.filter(
+		(post) =>
+			(import.meta.env.DEV || !post.data.draft) &&
+			post.data.category === category,
+	)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const description = categoryDescriptions[category] || SITE_DESCRIPTION;
